@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Dynamic Devices</title>
+<meta name="theme-color" content="#0A2E8C">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand"><img src="assets/logo-icon.png" alt="" width="40" height="33"><span>Dynamic Devices</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  <nav id="nav" class="nav">
+    <a href="shop.html">Shop</a>
+    <a href="index.html#services">Pay later, repair &amp; swap</a>
+    <a href="index.html#giveaway">Giveaway</a>
+    <a href="index.html#faq">Help</a>
+    <a href="#" class="btn btn-yellow" data-wa="Hi Dynamic Devices, I need help with an order.">Chat on WhatsApp</a>
+  </nav>
+</header>
+
+<main class="section" id="checkout">
+  <h2>Your cart</h2>
+  <div id="items"></div>
+
+  <div id="form" hidden>
+    <div class="fgroup">
+      <h3>Your details</h3>
+      <input class="field" id="name" placeholder="Full name" autocomplete="name">
+      <input class="field" id="phone" type="tel" placeholder="Phone number" autocomplete="tel">
+    </div>
+
+    <div class="fgroup">
+      <h3>Delivery or pickup</h3>
+      <label class="choice"><input type="radio" name="method" value="pickup" checked> Pickup (free): 17, Kodesho Street, Computer Village, Ikeja</label>
+      <label class="choice"><input type="radio" name="method" value="delivery"> Delivery</label>
+      <div id="deliveryBox" class="fgroup" hidden>
+        <select class="field" id="zone"></select>
+        <textarea class="field" id="address" rows="3" placeholder="Full delivery address, city and state"></textarea>
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <h3>How will you pay?</h3>
+      <label class="choice"><input type="radio" name="pay" value="now" checked> Pay now (bank transfer)</label>
+      <label class="choice"><input type="radio" name="pay" value="later"> Buy now, pay later (40% down, rest over 20 weeks)</label>
+      <div id="laterBox" class="fgroup" hidden>
+        <input class="field" id="nin" inputmode="numeric" maxlength="11" placeholder="Your 11-digit NIN">
+        <p class="note">Your NIN is used only to verify you for pay later. We approve every pay later request before shipping.</p>
+      </div>
+    </div>
+
+    <div class="sum" id="summary"></div>
+
+    <div class="bank">
+      <p id="payNote"></p>
+      <p><strong>Moniepoint</strong><br>Account name: <strong>Ojo Stephen Toluwani</strong><br>Account number: <strong>8104504589</strong></p>
+      <button class="btn btn-ghost-dark" id="copy" type="button">Copy account number</button>
+    <a href="#" class="btn btn-yellow" style="display:block" data-wa="Hi Dynamic Devices, I have made my payment. Here is my proof of payment.">I have paid: send proof on WhatsApp</a>
+<p class="note">Tap the button, attach your payment screenshot in WhatsApp using the + or paperclip, then send. We confirm your order once the payment is received.</p>
+    </div>
+
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn btn-yellow" id="send" type="button">Send order on WhatsApp</button>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/logo-icon.png" alt="" width="56" height="46">
+  <p><strong>Dynamic Devices</strong><br>17, Kodesho Street, Computer Village, Ikeja, Lagos</p>
+  <p>Your Trusted Plug For Original Gadgets</p>
+</footer>
+
+<a href="#" class="wa-float" data-wa="Hi Dynamic Devices!" aria-label="Chat on WhatsApp">Chat</a>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
